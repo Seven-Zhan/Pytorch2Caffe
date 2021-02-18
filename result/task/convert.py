@@ -3,7 +3,7 @@ sys.path.append('Pytorch2Caffe root path')
 import torch
 import pytorch_to_caffe
 
-from model import Net
+from model import Net # import your model
 
 
 
