@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     dummy_inputs = torch.randn(1, 3, 128, 256) # input shape
     torch_ouputs = torch_model(dummy_inputs).data.numpy()
-    print(torch_ouputs.shape)
+    # print(torch_ouputs.shape)
 
     numpy_inputs = dummy_inputs.numpy()
     prototxt_path = 'caffe model prototxt'
