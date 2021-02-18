@@ -7,7 +7,7 @@ import subprocess
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser('Convert pytorch model to caffe format')
-    parser.add_argument('-t', '--task', default='fic', type=str, help='type of task: fic or feh')
+    parser.add_argument('-t', '--task', default='task', type=str, help='type of task: fic or feh')
     
     args, unparsed = parser.parse_known_args()
 
