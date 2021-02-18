@@ -6,7 +6,7 @@ import torch
 import caffe
 caffe.set_mode_cpu()
 
-from model import Net
+from model import Net # import your model
 
 
 
