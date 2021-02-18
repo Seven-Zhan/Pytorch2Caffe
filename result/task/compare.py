@@ -16,22 +16,22 @@ np.random.seed(SEED)
 
 if __name__ == '__main__':
 
-    ckpt = 'D:\\DevSnaps\\vehicle_face\\2021-01-18-17-18-52\\epoch=25.pth'
+    ckpt = 'pytorch model file .pth'
     torch_model = Net()
     torch_model.load_state_dict(torch.load(ckpt, map_location='cpu'))
     torch_model.eval()
 
-    dummy_inputs = torch.randn(1, 3, 128, 256)
+    dummy_inputs = torch.randn(1, 3, 128, 256) # input shape
     torch_ouputs = torch_model(dummy_inputs).data.numpy()
     print(torch_ouputs.shape)
 
     numpy_inputs = dummy_inputs.numpy()
-    prototxt_path = 'D:\\DevCodes\\pytorch_caffe\\model.prototxt'
-    caffemodel_path = 'D:\\DevCodes\\pytorch_caffe\\model.caffemodel'
+    prototxt_path = 'caffe model prototxt'
+    caffemodel_path = 'caffe model caffemodel'
     caffe_model = caffe.Net(prototxt_path, caffemodel_path, caffe.TEST)
 
-    input_name = 'blob1'
-    ouput_name = 'softmax_blob1'
+    input_name = 'input blob name'
+    ouput_name = 'output blob name'
 
     caffe_model.blobs[input_name].data[...] = numpy_inputs
     caffe_ouputs = caffe_model.forward()[ouput_name]
